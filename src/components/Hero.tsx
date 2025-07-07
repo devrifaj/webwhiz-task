@@ -12,7 +12,7 @@ const Hero = () => {
             Turning{" "}
             <span className="primary-text-color relative">
               Imagination
-              <span className="absolute bottom-4.5 left-1 right-1 h-[20px] bg-text-shadow"></span>
+              <span className="absolute bottom-2.5 md:bottom-3 lg:bottom-4.5 left-1 right-1 h-2.5 md:h-[20px] bg-text-shadow"></span>
             </span>{" "}
             into Innovation
           </h1>
