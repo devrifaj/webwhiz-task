@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-manrope: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  /* colors */
+  --color-primary: #185ad9;
+  --color-secondary: #5f90f0;
+  --color-paragraph: #64656d;
+  --color-heading: #130929;
+  --color-caption: #fba017;
+  --color-text-shadow: #185ad933;
+  --color-hero-circle-top: #9965cf1a;
+  --color-hero-circle-bottom: #9264e3;
+
+  /* shadows */
+  --shadow-hero-card: 10px 10px 80px 0px rgba(35, 10, 136, 0.08);
+}
+
+@layer base {
+  html {
+    @apply leading-none;
+  }
+  body {
+    @apply box-border p-0 m-0 text-paragraph font-manrope bg-white;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .primary-btn {
+    @apply text-white font-medium text-sm;
+    background: linear-gradient(99deg, #5f90f0 5.67%, #185ad9 98.08%);
+  }
+  .primary-btn-outline {
+    @apply font-medium text-sm border border-primary;
+    background: linear-gradient(99deg, #5f90f0 5.67%, #185ad9 98.08%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-overlay {
+    @apply rounded-2xl;
+    background-color: rgba(255, 140, 56, 0.1);
+  }
+  .hero-box-card {
+    @apply shadow-hero-card absolute bg-white;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[704px] sm:max-w-[608px] max-w-[327px] mx-auto;
+  }
+  .primary-color {
+    background: linear-gradient(99deg, #5f90f0 5.67%, #185ad9 98.08%);
+  }
+  .primary-text-color {
+    background: linear-gradient(99deg, #5f90f0 5.67%, #185ad9 98.08%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
 }
