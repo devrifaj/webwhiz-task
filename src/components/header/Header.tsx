@@ -35,7 +35,7 @@ const Header = () => {
       </nav>
 
       {/* mobile menu */}
-      <div className={`absolute top-24 left-0 w-full p-6 bg-white z-40 ${isMobileMenuOpen ? "block" : "hidden"}`}>
+      <div className={`absolute md:top-24 left-0 w-full p-6 bg-white z-40 ${isMobileMenuOpen ? "block" : "hidden"}`}>
         <div className="flex flex-col gap-4">
           <NavLinks mobile />
         </div>
